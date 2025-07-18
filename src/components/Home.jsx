@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { FaRocket, FaInstagram } from "react-icons/fa";
 import { FaMeta, FaXTwitter } from "react-icons/fa6";
 import { PiTimer } from "react-icons/pi";
-import { MdCurrencyRupee } from "react-icons/md";
 import { TbTicket } from "react-icons/tb";
 import { GoPeople } from "react-icons/go";
+import { PiArrowsClockwise } from "react-icons/pi";
+
 
 import logo from "../assets/Logo.png";
 import swapBg from "../assets/swap_bg.png";
@@ -12,7 +13,7 @@ import bgImage from "../assets/bg.png";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("book");
-  const tabs = ["book", "resell", "safe"];
+  const tabs = ["book", "Swap", "Experience"];
 
   const tabContent = {
     book: {
@@ -66,9 +67,9 @@ export default function Home() {
       ),
       icon: <TbTicket className="mx-auto text-3xl" />,
     },
-    resell: {
-      title: "Resell & Make Money",
-      description: "Can't go? Resell your ticket and make money",
+    Swap: {
+      title: "Swap & Make Money",
+      description: "Plans changed? Never let your ticket go waste-swap it!",
       ticket: (
         <span className="flex items-center justify-center gap-2">
           {/* SVG Icon */}
@@ -159,11 +160,11 @@ export default function Home() {
           Sold for ₹100 – ₹300!
         </span>
       ),
-      icon: <MdCurrencyRupee className="mx-auto text-3xl" />,
+      icon: <PiArrowsClockwise className="mx-auto text-3xl" />,
     },
-    safe: {
-      title: "Safe Trading",
-      description: "Secure transactions with buyer protection",
+    Experience: {
+      title: "Experience Trading",
+      description: "Time to experience it! Create memories you can save forever.",
       ticket: (
         <span className="flex items-center justify-center gap-2">
           {/* SVG Icon */}
@@ -208,7 +209,7 @@ export default function Home() {
           100% Secure Transfer
         </span>
       ),
-      icon: <GoPeople className="mx-auto text-2xl" />,
+      icon: "🪩",
     },
   };
 
@@ -335,7 +336,9 @@ export default function Home() {
         <div className="lg:w-1/2 w-full flex flex-col justify-between items-center">
           {/* Header Text */}
           <div className="text-center mb-4 lg:mr-10">
-            <h2 className="text-xl font-semibold mb-2 lg:mt-10">How Eswap Works</h2>
+            <h2 className="text-xl font-semibold mb-2 lg:mt-10">
+              How Eswap Works
+            </h2>
             <p className="text-sm text-gray-300">
               See what you'll be able to do when we launch
             </p>
@@ -358,8 +361,8 @@ export default function Home() {
                   >
                     <div className="text-lg">
                       {tab === "book" && <TbTicket />}
-                      {tab === "resell" && <MdCurrencyRupee />}
-                      {tab === "safe" && <GoPeople />}
+                      {tab === "Swap" && <PiArrowsClockwise />}
+                      {tab === "Experience" && "🪩"}
                     </div>
                     <span className="text-xs mt-1 capitalize">{tab}</span>
                   </button>
@@ -408,8 +411,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-              <h1 className="hidden text-[#4A5565] lg:block px-30 mt-10">Copyright © 2025 Theories. All rights reserved.</h1>
-
+      <h1 className="hidden text-[#4A5565] lg:block px-30 mt-10">
+        Copyright © 2025 Theories. All rights reserved.
+      </h1>
 
       {/* Bottom Get Notified Section (visible only on sm/md/xs) */}
       <div className="block lg:hidden px-4 sm:px-10 md:px-20 pb-10">
@@ -424,8 +428,9 @@ export default function Home() {
             Notify Me
           </button>
         </div>
-                <h1 className="block text-[#4A5565] lg:hidden">Copyright © 2025 Theories. All rights reserved.</h1>
-
+        <h1 className="block text-[#4A5565] lg:hidden">
+          Copyright © 2025 Theories. All rights reserved.
+        </h1>
       </div>
     </div>
   );
