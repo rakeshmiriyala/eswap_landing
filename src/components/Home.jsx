@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FaRocket, FaInstagram, FaShareAlt } from "react-icons/fa";
+import { FaRocket, FaInstagram } from "react-icons/fa";
 import { FaMeta, FaXTwitter } from "react-icons/fa6";
 import { PiTimer } from "react-icons/pi";
 import { MdCurrencyRupee } from "react-icons/md";
-import { PiTicketFill } from "react-icons/pi";
 import logo from "../assets/Logo.png";
+import { TbTicket } from "react-icons/tb";
+import { GoPeople } from "react-icons/go";
+
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("book");
@@ -15,19 +17,19 @@ export default function Home() {
       title: "Book Any Event",
       description: "Browse hundreds of events",
       ticket: "Summer Festival – ₹250",
-      icon: <PiTicketFill className="mx-auto text-3xl" />,
+      icon: <TbTicket className="mx-auto text-3xl" />,
     },
     resell: {
-      title: "Easy Swaps",
-      description: "Can't go? Swap it securely",
-      ticket: "Startup Meetup – ₹100",
+      title: "Resell & Make Money",
+      description: "Can't go? Resell your ticket and make money",
+      ticket: "Sold for ₹100 – ₹300!",
       icon: <MdCurrencyRupee className="mx-auto text-3xl" />,
     },
     safe: {
-      title: "100% Safe",
-      description: "Built-in ticket protection",
-      ticket: "Movie Night – ₹150",
-      icon: <FaShareAlt className="mx-auto text-2xl" />,
+      title: "Safe Trading",
+      description: "Secure transactions with buyer protection",
+      ticket: "100% Secure Transfer",
+      icon: <GoPeople className="mx-auto text-2xl" />,
     },
   };
 
@@ -43,7 +45,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen bg-gradient-to-r from-[#000000] via-[#000000] to-[#8e0202] to-[90%] text-white  font-sans p-6 overflow-hidden">
+    <div className="h-screen bg-gradient-to-r from-[#000000] via-[#000000] to-[#8e0202] to-[90%] text-white  font-sans p-6">
       {/* Logo */}
       <div className="text-3xl font-bold m-8 mb-0 px-32">
         <img src={logo} alt="Logo" className="h-15" />
@@ -56,7 +58,7 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3 border rounded-md border-white bg-black px-4 py-2 w-fit">
               <FaRocket />
-              <span className="uppercase">Launching Soon</span>
+              <span className="">Launching Soon</span>
             </div>
             <div className="flex items-center gap-2 text-lg">
               <PiTimer />
@@ -66,15 +68,15 @@ export default function Home() {
 
           <h2 className="text-6xl font-bold">Book it.</h2>
           <h1 className="text-6xl font-bold">Can't Go?</h1>
-          <h1 className="text-6xl font-bold">Swap it.</h1>
+          <h1 className="text-6xl font-bold mb-10">Swap it.</h1>
 
-          <p className="mb-4">
+          <p className="mb-10">
             The first app where you can safely swap your event tickets when life
             happens and turn your plans into money.
           </p>
 
           <div>
-            <p className="mb-2">Get notified when we launch</p>
+            <p className="mb-4">Get notified when we launch</p>
             <div className="flex">
               <input
                 type="email"
@@ -117,9 +119,9 @@ export default function Home() {
                     }`}
                   >
                     <div className="text-lg">
-                      {tab === "book" && "🎟️"}
-                      {tab === "resell" && "₹"}
-                      {tab === "safe" && "🛡️"}
+                      {tab === "book" && <TbTicket/>}
+                      {tab === "resell" && <MdCurrencyRupee/>}
+                      {tab === "safe" && <GoPeople/>}
                     </div>
                     <span className="text-xs mt-1 font-medium capitalize">
                       {tab}
@@ -130,12 +132,14 @@ export default function Home() {
 
               {/* Icon & Title */}
               <div className="text-white flex flex-col items-center">
-                {tabContent[activeTab].icon}
-              </div>
+  <div className="bg-black rounded-full w-16 h-16 p-4 flex items-center justify-center">
+    {tabContent[activeTab].icon}
+  </div>
+</div>
               <div className="text-xl font-semibold text-center">
                 {tabContent[activeTab].title}
               </div>
-              <p className="text-sm text-gray-400 text-center">
+              <p className="text-sm text-white text-center">
                 {tabContent[activeTab].description}
               </p>
 
