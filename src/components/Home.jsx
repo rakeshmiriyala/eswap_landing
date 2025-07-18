@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         {/* Right Side */}
-        <div className="flex flex-col justify-between w-full h-full ">
+        <div className="flex flex-col justify-between w-full">
           {/* Heading */}
           <div className="px-2">
             <h2 className="text-xl font-semibold text-center mb-4">
