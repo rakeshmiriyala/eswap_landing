@@ -7,7 +7,6 @@ import logo from "../assets/Logo.png";
 import { TbTicket } from "react-icons/tb";
 import { GoPeople } from "react-icons/go";
 
-
 export default function Home() {
   const [activeTab, setActiveTab] = useState("book");
   const tabs = ["book", "resell", "safe"];
@@ -52,7 +51,7 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className="grid px-10 py-20 md:grid-cols-2 gap-10 relative ">
+      <div className="grid px-10 py-20 pb-0 md:grid-cols-2 gap-10 relative ">
         {/* Left Side */}
         <div className="space-y-4 px-30">
           <div className="flex items-center gap-6">
@@ -119,9 +118,9 @@ export default function Home() {
                     }`}
                   >
                     <div className="text-lg">
-                      {tab === "book" && <TbTicket/>}
-                      {tab === "resell" && <MdCurrencyRupee/>}
-                      {tab === "safe" && <GoPeople/>}
+                      {tab === "book" && <TbTicket />}
+                      {tab === "resell" && <MdCurrencyRupee />}
+                      {tab === "safe" && <GoPeople />}
                     </div>
                     <span className="text-xs mt-1 font-medium capitalize">
                       {tab}
@@ -132,10 +131,10 @@ export default function Home() {
 
               {/* Icon & Title */}
               <div className="text-white flex flex-col items-center">
-  <div className="bg-black rounded-full w-16 h-16 p-4 flex items-center justify-center">
-    {tabContent[activeTab].icon}
-  </div>
-</div>
+                <div className="bg-black rounded-full w-16 h-16 p-4 flex items-center justify-center">
+                  {tabContent[activeTab].icon}
+                </div>
+              </div>
               <div className="text-xl font-semibold text-center">
                 {tabContent[activeTab].title}
               </div>
