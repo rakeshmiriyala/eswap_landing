@@ -6,6 +6,8 @@ import { MdCurrencyRupee } from "react-icons/md";
 import logo from "../assets/Logo.png";
 import { TbTicket } from "react-icons/tb";
 import { GoPeople } from "react-icons/go";
+import swapBg from "../assets/swap_bg.png";
+import bgImage from "../assets/bg.png";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("book");
@@ -44,12 +46,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen bg-gradient-to-r from-[#000000] via-[#000000] to-[#8e0202] to-[90%] text-white  font-sans p-6">
+    <div
+      className="h-screen bg-cover bg-no-repeat bg-center text-white font-sans p-6"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      {" "}
       {/* Logo */}
       <div className="text-3xl font-bold m-8 mb-0 px-32">
         <img src={logo} alt="Logo" className="h-15" />
       </div>
-
       {/* Main Content */}
       <div className="grid px-10 py-20 pb-0 md:grid-cols-2 gap-10 relative ">
         {/* Left Side */}
@@ -67,8 +72,15 @@ export default function Home() {
 
           <h2 className="text-6xl font-bold">Book it.</h2>
           <h1 className="text-6xl font-bold">Can't Go?</h1>
-          <h1 className="text-6xl font-bold mb-10">Swap it.</h1>
-
+          <h1
+            className="text-6xl font-bold mb-10 bg-cover bg-center px-4 ml-[-70px] pl-18 pb-4 inline-block"
+            style={{
+              backgroundImage: `url(${swapBg})`,
+              backgroundSize: "100% 100%",
+            }}
+          >
+            Swap it.
+          </h1>
           <p className="mb-10">
             The first app where you can safely swap your event tickets when life
             happens and turn your plans into money.
@@ -92,7 +104,7 @@ export default function Home() {
         {/* Right Side */}
         <div className="flex flex-col justify-between w-full">
           {/* Heading */}
-          <div className="px-2">
+          <div className="">
             <h2 className="text-xl font-semibold text-center mb-4">
               How Eswap Works
             </h2>
@@ -104,9 +116,9 @@ export default function Home() {
           {/* Card + Vertical Social Icons */}
           <div className="flex w-full md:w-[90%] mx-auto gap-10 items-center justify-center">
             {/* Card Box */}
-            <div className="flex-1 backdrop-blur-md bg-gradient-to-r from-[#282828] via-[#1f1f1f] to-[#4c3131]  p-6 rounded-2xl space-y-6 text-white">
+            <div className="flex-1 backdrop-blur-md bg-[#646464a4]/30  p-6 rounded-2xl space-y-6 text-white">
               {/* Tabs */}
-              <div className="flex justify-between items-center bg-black/60 rounded-xl overflow-hidden text-sm font-medium text-white">
+              <div className="flex justify-between items-center p-1 bg-black/60 rounded-xl overflow-hidden text-sm font-medium text-white">
                 {tabs.map((tab) => (
                   <button
                     key={tab}
@@ -114,7 +126,7 @@ export default function Home() {
                     className={`w-1/3 px-4 py-3 transition text-center flex flex-col items-center justify-center ${
                       activeTab === tab
                         ? "bg-[#ff1f42] text-white rounded-xl"
-                        : "hover:bg-white/10"
+                        : ""
                     }`}
                   >
                     <div className="text-lg">
