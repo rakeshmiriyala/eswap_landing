@@ -209,7 +209,7 @@ export default function Home() {
           100% Secure Transfer
         </span>
       ),
-      icon: "🪩",
+      icon: <GoPeople className="mx-auto text-2xl" />,
     },
   };
 
@@ -362,7 +362,7 @@ export default function Home() {
                     <div className="text-lg">
                       {tab === "book" && <TbTicket />}
                       {tab === "Swap" && <PiArrowsClockwise />}
-                      {tab === "Experience" && "🪩"}
+                      {tab === "Experience" && <GoPeople />}
                     </div>
                     <span className="text-xs mt-1 capitalize">{tab}</span>
                   </button>
