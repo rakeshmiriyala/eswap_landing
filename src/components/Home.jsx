@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-no-repeat bg-center text-white font-sans p-4 sm:p-6"
+      className="min-h-screen bg-cover bg-no-repeat bg-center text-white font-sans xs:p-4 sm:p-6"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Logo */}
@@ -57,9 +57,9 @@ export default function Home() {
       </div>
 
       {/* Content Layout */}
-      <div className="flex flex-col lg:flex-row justify-between gap-10 px-4 sm:px-10 md:px-20 py-8">
+      <div className="flex flex-col lg:flex-row justify-between px-4  gap-10  sm:px-10 md:px-20 py-8">
         {/* Left Content */}
-        <div className="space-y-4 lg:w-1/2">
+        <div className="space-y-6 lg:w-1/ lg:px-30 lg:py-8 lg:pb-0">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 border rounded-md border-white bg-black px-4 py-2 w-fit">
               <FaRocket />
@@ -71,10 +71,10 @@ export default function Home() {
             </div>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-bold">Book it.</h2>
-          <h1 className="text-4xl sm:text-5xl font-bold">Can't Go?</h1>
+          <h2 className="lg:text-6xl sm:text-5xl xs:text-3xl font-bold">Book it.</h2>
+          <h1 className="lg:text-6xl sm:text-5xl xs:text-3xl font-bold">Can't Go?</h1>
           <h1
-            className="text-4xl sm:text-5xl font-bold mb-6 bg-cover bg-center inline-block px-4 ml-[-40px] sm:ml-[-60px]"
+            className="lg:text-6xl sm:text-5xl xs:text-3xl font-bold mb-6 bg-cover bg-center inline-block px-4 lg:ml-[-60px] xs:ml-[-30px] md:ml-[-50px] md:pl-12 md:pb-3 xs:pl-8 lg:pl-16 pb-3 xs:pb-2 sm:ml-[-60px]"
             style={{
               backgroundImage: `url(${swapBg})`,
               backgroundSize: "100% 100%",
@@ -83,7 +83,7 @@ export default function Home() {
             Swap it.
           </h1>
 
-          <p className="mb-8 text-sm sm:text-base">
+          <p className="mb-8 text-sm sm:text-base lg:w-104">
             The first app where you can safely swap your event tickets when life
             happens and turn your plans into money.
           </p>
@@ -96,7 +96,7 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 text-white bg-transparent border border-white/30 rounded-md sm:rounded-l-md sm:rounded-r-none placeholder-white outline-none w-full"
+                className="px-4 py-2 text-white bg-transparent border border-white/30 rounded-md sm:rounded-l-md sm:rounded-r-none placeholder-white outline-none lg:w-70 w-full"
               />
               <button className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
                 Notify Me
@@ -108,7 +108,7 @@ export default function Home() {
         {/* Right Content */}
         <div className="lg:w-1/2 w-full flex flex-col justify-between items-center">
           {/* Header Text */}
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 lg:mr-10">
             <h2 className="text-xl font-semibold mb-2">How Eswap Works</h2>
             <p className="text-sm text-gray-300">
               See what you'll be able to do when we launch
@@ -118,7 +118,7 @@ export default function Home() {
           {/* Tab Section */}
           <div className="flex flex-col sm:flex-row items-center gap-6 w-full">
             {/* Card */}
-            <div className="flex-1 backdrop-blur-md bg-[#646464a4]/30 p-6 rounded-2xl space-y-6 text-white w-full">
+            <div className="flex-1 backdrop-blur-md bg-[#646464a4]/30 p-6 lg:mr-10  rounded-2xl space-y-6 text-white w-full">
               {/* Tabs */}
               <div className="flex justify-between p-1 bg-black/60 rounded-xl text-sm font-medium">
                 {tabs.map((tab) => (
