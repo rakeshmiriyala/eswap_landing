@@ -4,16 +4,16 @@ import { FaMeta, FaXTwitter } from "react-icons/fa6";
 import { PiTimer } from "react-icons/pi";
 import { TbTicket } from "react-icons/tb";
 import { GoPeople } from "react-icons/go";
-import { PiArrowsClockwise } from "react-icons/pi";
+import { IoMdSwap } from "react-icons/io";
 
 
-import logo from "../assets/Logo.png";
+import logo from "../assets/Logo_1.png";
 import swapBg from "../assets/swap_bg.png";
 import bgImage from "../assets/bg.png";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("book");
-  const tabs = ["book", "Swap", "Experience"];
+  const tabs = ["book", "Swap", "moments"];
 
   const tabContent = {
     book: {
@@ -160,53 +160,52 @@ export default function Home() {
           Sold for ₹100 – ₹300!
         </span>
       ),
-      icon: <PiArrowsClockwise className="mx-auto text-3xl" />,
+      icon: <IoMdSwap className="mx-auto text-3xl" />,
     },
-    Experience: {
-      title: "Experience Trading",
-      description: "Time to experience it! Create memories you can save forever.",
+    moments: {
+      title: "Share your moments",
+      description:
+        "Time to experience it! Create memories you can save forever.",
       ticket: (
         <span className="flex items-center justify-center gap-2">
           {/* SVG Icon */}
           <svg
-            width="16"
+            width="17"
             height="18"
-            viewBox="0 0 16 18"
+            viewBox="0 0 17 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M7.79425 17.9988L12.4461 14.6981C14.1068 13.5197 15.0117 11.7681 15.0117 9.73182V6.00216C15.0117 5.28195 15.076 3.57223 15.5884 2.84597C13.3198 2.42138 10.3923 1.39788 7.79417 0C5.19612 1.39788 2.26859 2.42138 0 2.84597C0.512415 3.57223 0.576715 5.28195 0.576715 6.00216V9.73182C0.576715 11.7681 1.48164 13.5197 3.14233 14.6981L7.79425 17.9988Z"
-              fill="#0E80AD"
+              d="M16.6616 5.80633L11.8062 15.4893C11.6109 15.8799 11.1365 16.0474 10.7179 15.852L2.15115 11.5547C1.76048 11.3594 1.59305 10.885 1.78839 10.4664L6.64381 0.783473C6.83914 0.392806 7.34143 0.225378 7.7321 0.420711L16.2989 4.71804C16.7174 4.94128 16.8569 5.41566 16.6616 5.80633Z"
+              fill="#27D1FF"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M7.79435 17.9988L12.4462 14.6981C14.107 13.5198 15.0118 11.7681 15.0118 9.73182V6.00216C15.0118 5.28195 15.0761 3.57223 15.5885 2.84604C13.3199 2.42145 10.3924 1.39795 7.79428 0C5.65672 1.15011 3.29632 2.04671 1.26318 2.56495C1.71299 3.38818 1.86932 5.32147 1.86932 6.00216V9.73182C1.86932 11.0823 2.26751 13.0756 3.02002 14.6089C3.06043 14.639 3.10114 14.6687 3.14243 14.698L7.79428 17.9987L7.79435 17.9988Z"
-              fill="#1391C4"
+              d="M3.04385 10.4376L7.39699 1.81501C7.4528 1.67549 7.62022 1.61968 7.75975 1.7034L15.2661 5.47054C15.4056 5.52635 15.4615 5.69377 15.3777 5.8333L11.0525 14.4838C10.9967 14.6233 10.8293 14.6791 10.6897 14.5954L3.18337 10.8282C3.04385 10.7445 2.98804 10.5771 3.04385 10.4376Z"
+              fill="black"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M7.79451 17.9988L12.4464 14.6981C14.1071 13.5198 15.012 11.7681 15.012 9.73182V6.00216C15.012 5.28195 15.0763 3.57223 15.5887 2.84604C13.32 2.42145 10.3926 1.39795 7.79443 0L7.79451 17.9988Z"
-              fill="#17ACE8"
+              d="M12.0296 6.00064V16.8556C12.0296 17.3021 11.6669 17.6648 11.2204 17.6648H1.64908C1.20261 17.6648 0.839844 17.3021 0.839844 16.8556V6.00064C0.839844 5.55417 1.20261 5.19141 1.64908 5.19141H11.2483C11.6669 5.19141 12.0296 5.55417 12.0296 6.00064Z"
+              fill="#F03049"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.88284 11.891L11.827 6.94686C12.0905 6.68332 12.0905 6.25216 11.827 5.98862C11.5634 5.72515 11.1323 5.72515 10.8687 5.98862L6.17995 10.6774L4.82779 8.33537C4.64146 8.01269 4.22498 7.90105 3.90222 8.08739C3.57946 8.27373 3.46789 8.69021 3.65423 9.01296L5.18698 11.6678C5.36019 11.9677 5.63649 12.1523 5.97982 12.1975C6.32323 12.2427 6.63795 12.1359 6.88284 11.891Z"
-              fill="#62E8F1"
+              d="M12.0296 6.00064V16.8556C12.0296 17.3021 11.6669 17.6648 11.2204 17.6648H1.64908C1.20261 17.6648 0.839844 17.3021 0.839844 16.8556V16.7719C6.53241 16.6882 11.1367 12.056 11.1367 6.3355V5.19141H11.2204C11.6669 5.19141 12.0296 5.55417 12.0296 6.00064Z"
+              fill="#DF223B"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.88276 11.8909L7.79425 10.9795V9.06304L6.17995 10.6773L4.82779 8.33531C4.64146 8.01262 4.22498 7.90098 3.90222 8.08732C3.57946 8.27366 3.46789 8.69014 3.65423 9.0129L5.18698 11.6677C5.36019 11.9676 5.63649 12.1523 5.97982 12.1975C6.32323 12.2427 6.63787 12.1358 6.88276 11.8909Z"
-              fill="#57CED6"
+              d="M1.62109 6.00098H11.2482V14.3724H1.62109V6.00098Z"
+              fill="black"
+            />
+            <path
+              d="M8.17845 9.85216C8.17845 10.8009 7.39712 11.5823 6.44836 11.5823C5.49959 11.5823 4.71826 10.8009 4.71826 9.85216C4.71826 8.9034 5.49959 8.12207 6.44836 8.12207C7.39712 8.12207 8.17845 8.9034 8.17845 9.85216Z"
+              fill="#FFD880"
+            />
+            <path
+              d="M9.4066 13.2844V14.1216H3.46289V13.2844C3.46289 12.3636 4.21632 11.6101 5.13718 11.6101H7.73232C8.65317 11.5822 9.4066 12.3356 9.4066 13.2844Z"
+              fill="#FF7DAF"
             />
           </svg>
-          100% Secure Transfer
+          Share & Cherish your moments
         </span>
       ),
       icon: <GoPeople className="mx-auto text-2xl" />,
@@ -361,8 +360,8 @@ export default function Home() {
                   >
                     <div className="text-lg">
                       {tab === "book" && <TbTicket />}
-                      {tab === "Swap" && <PiArrowsClockwise />}
-                      {tab === "Experience" && <GoPeople />}
+                      {tab === "Swap" && <IoMdSwap />}
+                      {tab === "moments" && <GoPeople />}
                     </div>
                     <span className="text-xs mt-1 capitalize">{tab}</span>
                   </button>
