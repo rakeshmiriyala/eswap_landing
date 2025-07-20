@@ -506,6 +506,7 @@ const Home = () => {
       <h1 className="hidden text-[#4A5565] lg:block px-30 mt-10">
         Copyright © 2025 Eswap. All rights reserved.
       </h1>
+      <h1 className="hidden text-right text-[#4A5565] lg:block mt-[-20px] px-30"> contact@eswap.in</h1>
 
       {/* Bottom Get Notified Section (visible only on sm/md/xs) */}
       <div className="block lg:hidden px-4 sm:px-10 md:px-20 pb-10">
@@ -527,9 +528,10 @@ const Home = () => {
               <FaMeta className="text-2xl hover:text-blue-500 cursor-pointer" />
               <FaXTwitter className="text-2xl hover:text-gray-300 cursor-pointer" />
             </div>
-        <h1 className="block text-[#4A5565] lg:hidden">
+        <h1 className="block text-center text-[#4A5565] lg:hidden">
           Copyright © 2025  Eswap. All rights reserved.
         </h1>
+        <h1 className="block text-center pt-3 text-[#4A5565] lg:hidden"> contact@eswap.in</h1>
       </div>
     </div>
   );
