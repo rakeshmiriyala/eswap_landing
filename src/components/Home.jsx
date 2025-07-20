@@ -10,8 +10,7 @@ import bgImage from "../assets/bg.png";
 import axios from "axios";
 import sheetDbUrl from "./Db.data.jsx";
 
-
-const Home =()=> {
+const Home = () => {
   const [activeTab, setActiveTab] = useState("book");
   const tabs = ["book", "Swap", "moments"];
 
@@ -252,8 +251,8 @@ const Home =()=> {
 
   return (
     <div
-      className="min-h-screen bg-cover public-sans bg-no-repeat bg-center text-white xs:p-4 sm:p-6"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="min-h-screen bg-cover public-sans  text-white xs:p-4 sm:p-6  bg-responsive"
+      // style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Logo */}
       <div className="text-3xl font-bold mb-4 lg:mb-0 px-4 lg:px-30 sm:px-10 md:px-20">
@@ -393,7 +392,8 @@ const Home =()=> {
               backgroundSize: "100% 100%",
             }}
           >
-            Swap it. <span className="text-xl text-[#DD1431] invisible ">k</span>
+            Swap it.{" "}
+            <span className="text-xl text-[#DD1431] invisible ">k</span>
           </h1>
 
           <p className="mb-8 text-sm sm:text-base lg:w-104">
@@ -410,11 +410,14 @@ const Home =()=> {
               <input
                 type="email"
                 value={email}
-          onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="px-4 py-2 text-white bg-transparent border border-white/30 rounded-md sm:rounded-l-md sm:rounded-r-none placeholder-white outline-none lg:w-70 w-full"
               />
-              <button           onClick={handleSubmit} className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
+              <button
+                onClick={handleSubmit}
+                className="bg-red-600 hover:bg-red-700 hover:cursor-pointer text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32"
+              >
                 Notify Me
               </button>
             </div>
@@ -492,7 +495,7 @@ const Home =()=> {
             </div>
 
             {/* Vertical Socials */}
-            <div className="flex sm:flex-col md:pt-68 justify-center gap-9">
+            <div className="hidden lg:flex lg:flex-col lg:pt-68 justify-center gap-9">
               <FaInstagram className="text-2xl hover:text-pink-500 cursor-pointer" />
               <FaMeta className="text-2xl hover:text-blue-500 cursor-pointer" />
               <FaXTwitter className="text-2xl hover:text-gray-300 cursor-pointer" />
@@ -511,12 +514,19 @@ const Home =()=> {
           <input
             type="email"
             placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="px-4 py-2 text-white bg-transparent border border-white/30 rounded-md sm:rounded-l-md sm:rounded-r-none placeholder-white outline-none w-full"
           />
-          <button className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
+          <button  onClick={handleSubmit} className="bg-red-600 hover:bg-red-700 hover:cursor-pointer text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
             Notify Me
           </button>
         </div>
+         <div className="flex justify-center gap-9 py-4">
+              <FaInstagram className="text-2xl hover:text-pink-500 cursor-pointer" />
+              <FaMeta className="text-2xl hover:text-blue-500 cursor-pointer" />
+              <FaXTwitter className="text-2xl hover:text-gray-300 cursor-pointer" />
+            </div>
         <h1 className="block text-[#4A5565] lg:hidden">
           Copyright © 2025  Eswap. All rights reserved.
         </h1>
@@ -524,6 +534,5 @@ const Home =()=> {
     </div>
   );
 };
-
 
 export default Home;
