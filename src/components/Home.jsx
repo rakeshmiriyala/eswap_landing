@@ -7,8 +7,11 @@ import { GoPeople } from "react-icons/go";
 import { IoMdSwap } from "react-icons/io";
 import swapBg from "../assets/swap_bg.png";
 import bgImage from "../assets/bg.png";
+import axios from "axios";
+import sheetDbUrl from "./Db.data.jsx";
 
-export default function Home() {
+
+const Home =()=> {
   const [activeTab, setActiveTab] = useState("book");
   const tabs = ["book", "Swap", "moments"];
 
@@ -209,6 +212,33 @@ export default function Home() {
     },
   };
 
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!email.trim()) {
+      alert("Please enter a valid email.");
+      return;
+    }
+
+    try {
+      const res = await axios.post(sheetDbUrl, {
+        data: { Email: email },
+      });
+
+      if (res.status === 201 && res.data?.created === 1) {
+        setSubmitted(true);
+        setEmail("");
+        alert("Thank you! You’ll be notified.");
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      alert("Failed to submit email.");
+    }
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prev) => {
@@ -379,10 +409,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
               <input
                 type="email"
+                value={email}
+          onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="px-4 py-2 text-white bg-transparent border border-white/30 rounded-md sm:rounded-l-md sm:rounded-r-none placeholder-white outline-none lg:w-70 w-full"
               />
-              <button className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
+              <button           onClick={handleSubmit} className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md w-full sm:w-32">
                 Notify Me
               </button>
             </div>
@@ -491,4 +523,7 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+
+export default Home;
